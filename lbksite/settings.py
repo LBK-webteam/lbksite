@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['178.62.200.215',
                  '127.0.0.1',
-                 'waarisekonomika.be'
+                 'waarisekonomika.be',
+                 'localhost'
                  ]
 
 
