@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['178.62.200.215',
                  '127.0.0.1',
                  'waarisekonomika.be',
-                 'localhost'
+                 'localhost',
+                 'lbksite.eu.pythonanywhere.com'
                  ]
 
 
@@ -124,3 +125,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, '/main/static/')
