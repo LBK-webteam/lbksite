@@ -1,0 +1,163 @@
+/* Ervoor zorgen dat de verschillende elementen altijd de waarde van height en width hebben, zelfs met margin en padding */
+* {
+box-sizing: border-box;
+}
+
+/* Voor heel de pagina */
+body {
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+min-height: 100vh;
+margin: 0;
+position: relative;
+}
+
+/* De banner - het logo en de slider */
+#banner {
+height: 150px;
+width: 100%;
+background: rgb(147,193,104);
+padding: 20px;
+}
+
+#lbk-logo {
+float: left;
+}
+
+#sponsors {
+float: right;
+}
+
+#sponsors img {
+margin: 0px 25px;
+height: 100px;
+}
+
+.navbar-brand {
+margin: 0;
+padding: 0;
+}
+
+#navbar a {
+padding: 10px 30px;
+line-height: 34px;
+transition: color 0.5s;
+transition: background-color 0.5s;
+}
+
+#navbar a:hover {
+color: black;
+background-color: white;
+}
+
+/* Opmaak voor de footer */
+#footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+background-color: rgb(64, 64, 64);
+color: white;
+text-align: center;
+}
+
+#footer a img {
+margin-left: 20px;
+margin-right: 20px;
+}
+
+/* Opmaak van de homepage */
+#overview {
+position: relative;
+height: 1500px;
+margin: auto;
+}
+
+.green {
+background-color: rgb(147,193,104);
+overflow: auto;
+}
+
+/* De div met de 3 kaders links*/
+#personal {
+float: left;
+}
+
+/* De opmaak voor de 3 kaders (per kader) */
+#account, #calendar, #events {
+background-color: rgb(147,193,104);
+overflow: auto;
+border-radius: 10px;
+padding: 20px;
+min-height: 200px;
+}
+
+#account-title {
+background-color: rgb(179,225,136);
+border-radius: 5px;
+text-align: center;
+}
+
+#account a {
+color: black;
+}
+
+#account .input-group-prepend span {
+width: 40px;
+background-color: green;
+border: none;
+color: white;
+}
+
+#account .input-group-prepend i {
+color: white;
+}
+
+#account button {
+background-color: green;
+border: none;
+border-radius: 5px;
+padding: 10px 25px;
+color: white;
+transition: background-color 0.5s;
+}
+
+#account button:hover {
+background-color: darkgreen;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-right: 5px;
+}
+
+/* Opmaak voor het kader met de posts */
+
+#post {
+background-color: rgb(224, 224, 224);
+border-radius: 10px;
+padding: 20px;
+min-height: 200px;
+}
+
+/* Opmaak van de register page
+#register-container {
+background-color: rgb(147,193,104);
+max-width: 600px;
+margin: auto;
+
+margin-top: 20px;
+border-radius: 10px;
+
+padding: 10px 0;
+}*/
+
+/* Opmaak voor standaard tekstpagina's */
+#pagetext {
+background-color: white;
+overflow: auto;
+border-radius: 10px;
+margin: 30px 5%;
+padding: 20px;
+min-height: 200px;
+}
