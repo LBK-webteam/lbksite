@@ -29,7 +29,9 @@ ALLOWED_HOSTS = ['178.62.200.215',
                  '127.0.0.1',
                  'waarisekonomika.be',
                  'localhost',
-                 'lbksite.eu.pythonanywhere.com'
+                 'lbksite.eu.pythonanywhere.com',
+                 'www.lbk.be',
+                 'webapp-1861.eu.pythonanywhere.com',
                  ]
 
 
