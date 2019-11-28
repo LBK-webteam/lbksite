@@ -11,6 +11,7 @@ margin: 0;
 position: relative;
 }
 
+
 /* De banner - het logo en de slider */
 #banner {
 height: 150px;
@@ -49,7 +50,23 @@ color: black;
 background-color: white;
 }
 
-/* Opmaak voor de footer */
+/* Opmaak voor de footer --PAS #px AAN--  */
+@media  screen and (min-width: 821px) {#footer {
+position: fixed;
+background-color: rgb(64, 64, 64);
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;
+}}
+@media screen and (max-width: 820px) {#footer {
+background-color: rgb(64, 64, 64);
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;
+}}
+/* Oude opmaak
 #footer {
 position: fixed;
 bottom: 0;
@@ -57,7 +74,8 @@ width: 100%;
 background-color: rgb(64, 64, 64);
 color: white;
 text-align: center;
-}
+} */
+
 
 #footer a img {
 margin-left: 20px;
