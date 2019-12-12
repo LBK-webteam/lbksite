@@ -94,14 +94,14 @@
 
 <!-- overview -->
 <div id="overview" class="green">
-    <div id="page-text">
-        <h1>Huidig dagelijks bestuur</h1><br><br>
+    <div id="pagetext">
+        <h1>Dagelijks bestuur</h1><br><br>
         {% for db_member in db_members %}
-        <div>
+        <div class="d-block">
             <div class="float-left p-2">
-                <img src="{{ db_member.profile_picture.url }}" alt="{{ db_member.function }}">
+                <img src="{{ db_member.profile_picture.url }}" alt="{{ db_member.function }}" style="width: 160px; height: 200px;">
             </div>
-            <div class="float-left p-2">
+            <div class="d-block float-left p-2">
                 <h2>{{ db_member.function }}</h2>
                 <hr>
                 <p>{{ db_member.first_name }} {{ db_member.last_name }}</p>
@@ -109,7 +109,6 @@
                 <p>{{ db_member.phone_number }}</p>
             </div>
         </div>
-        <br><br>
         {% endfor %}
     </div>
 </div>

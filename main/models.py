@@ -68,7 +68,7 @@ class DBmember(models.Model):
     ])
     email = models.EmailField('E-mail', null=True)
     phone_number = models.CharField('Gsm-nummer', max_length=20)
-    profile_picture = models.ImageField('Profielfoto', upload_to='db_fotos')
+    profile_picture = models.ImageField('Profielfoto', upload_to='db')
 
     class Meta:
         verbose_name = 'DB member'
