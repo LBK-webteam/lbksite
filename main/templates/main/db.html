@@ -74,7 +74,7 @@
             </li>
             <li class="nav-item"><a class="nav-link" href="https://lbk.cursusdienst.org/">Cursusdienst</a></li>
             <li class="nav-item"><a class="nav-link" href="http://lbk.ulyssis.be/wiki/index.php?title=Main_Page">Wiki</a></li>
-            <!-- <li class="nav-item"><a class="nav-link" href="#">Contact</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="/db">Contact</a></li>
         </ul>
         <!-- Nodig wanneer de site tweetalig is
         <ul class="navbar-nav ml-auto">
@@ -98,9 +98,9 @@
         <h1>Dagelijks bestuur</h1><br><br>
         {% for db_member in db_members %}
         <div class="d-block">
-            <div class="float-left p-2">
+            <!-- <div class="float-left p-2">
                 <img src="{{ db_member.profile_picture.url }}" alt="{{ db_member.function }}" style="width: 160px; height: 200px;">
-            </div>
+            </div> -->
             <div class="d-block float-left p-2">
                 <h2>{{ db_member.function }}</h2>
                 <hr>
