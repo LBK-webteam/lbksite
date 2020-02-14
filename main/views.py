@@ -25,9 +25,15 @@ def page(request, page_title):
 
 def db(request):
     db_members = DBmember.objects.all()
-    context = {'db_members': db_members}
+    pages = Page.objects.all()
+    context = {'db_members': db_members, 'pages': pages}
     return render(request, 'main/db.html', context)
 
+
+def galabal(request):
+    pages = Page.objects.all()
+    context = {'pages': pages}
+    return render(request, 'main/galabal.html', context)
 
 """
 def register(request):

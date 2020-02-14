@@ -16,6 +16,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Javascriptje voor aantal dagen te berekenen -->
+    <script>
+    function aantal_dagen() {
+    var gala = new Date(2020, 2, 20, 0, 0, 0);
+    var today = new Date();
+    days = (gala.getMonth() - today.getMonth())*29 + gala.getDate() - today.getDate();
+    document.getElementById("aantal-dagen").innerHTML = "Nog " + days.toString() + " dagen!!";
+    }
+    </script>
 
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -27,8 +36,7 @@
     <title>LBK</title>
 </head>
 
-<body>
-
+<body onload="aantal_dagen()">
 <!-- banner -->
 <div id="banner" class="d-none d-lg-block float-left">
     <div id="lbk-logo">
@@ -95,22 +103,56 @@
 
 <!-- overview -->
 <div id="overview" class="green">
-    <div id="pagetext">
-        <h1>Dagelijks bestuur</h1><br><br>
-        {% for db_member in db_members %}
-        <div class="d-block">
-            <!-- <div class="float-left p-2">
-                <img src="{{ db_member.profile_picture.url }}" alt="{{ db_member.function }}" style="width: 160px; height: 200px;">
-            </div> -->
-            <div class="d-block float-left p-2">
-                <h2>{{ db_member.function }}</h2>
-                <hr>
-                <p>{{ db_member.first_name }} {{ db_member.last_name }}</p>
-                <p>{{ db_member.email }}</p>
-                <p>{{ db_member.phone_number }}</p>
-            </div>
+    <div id="gala-pagetext">
+        <div class="d-block text-center">
+            <p><font size="25" color="red" id="aantal-dagen"></font></p>
         </div>
-        {% endfor %}
+        <div class="d-block text-center">
+            <img src="{% static 'main/images/galabal.jpg' %}" class="img-fluid" alt="Galabal banner" title="Galabal banner">
+        </div>
+        <br>
+        <div class="d-block text-align-left"><font size="5">
+            <p>Nog even aftellen en dan is het weer zo ver: het befaamde LBK galabal! Dit jaar trekken we met z&rsquo;n allen naar Antwerpen om er weer een prachtige avond van te maken! We zetten de avond in met een receptie en diner, daarna kan het dansfeest beginnen.</p>
+            <p class="h2"><strong>Locatie</strong></p>
+            <p>Horta Art Nouveau</p>
+            <p>Hopland 2, 2000 Antwerpen</p>
+            <p class="h2"><strong>Tijdsverloop</strong></p>
+            <p>18.00 - 19.00 Aperitief<br /> 19.00 - 21.30 Diner<br /> 21.30 - 22.00 Overgang diner naar dansfeest<br /> 22.00 - 22.40 Liveband<br /> 22.40 - 4.30 Dansfeest</p>
+            <p class="h2"><strong>Prijzen</strong></p>
+            <p>Diner LBK leden: 60 euro <br /> Diner niet-LBK leden : 65 euro<br /> Dansfeest voorverkoop LBK: 15 euro<br /> Dansfeest niet-LBK leden: 18 euro</p>
+            <p class="h2"><strong>Inschrijven</strong></p>
+            <p>De inschrijvingslink voor het diner zal op <u>vrijdag 21 februari om 21u</u> op deze website verschijnen. Wees er snel bij, want de plaatsen zijn beperkt!</p>
+            <p>Inschrijven voor het dansfeest kan ook via deze website. De link hiervoor komt online op <u>maandag 17 februari om 18u</u>.</p>
+            <p>De inschrijvingslink voor de busdienst wordt samen met de bevestiging van je inschrijving voor het diner/dansfeest per mail doorgestuurd.</p>
+            <p class="h2"><strong>Busdienst</strong></p>
+            <p>Zoals elk jaar wordt er ook dit jaar weer een busdienst voor jullie voorzien. De opstapplaats in Leuven is op parking Bodart (Veilingweg, 3001 Leuven). De bussen in Antwerpen stoppen vlak aan de ingang van de zaal. Als je gebruik wilt maken van deze dienst, is het verplicht een inschrijvingsformulier in te vullen. Dit wordt per mail doorgestuurd na inschrijving voor het diner of dansfeest.</p>
+            <p>Diner: vertrek tussen 17:15-17:45</p>
+            <p>Dansfeest: vertrek tussen 21:10-23:05</p>
+            <p>We proberen iedereen een plaats te geven op de gewenste bus, maar kunnen dit niet garanderen.</p>
+            <p>Voor de rit van Antwerpen terug naar Leuven, moet je nog geen tijdstip kiezen. Er zullen bussen klaarstaan aan de zaal vanaf 1u en vertrekken wanneer ze vol zitten. De laatste bus terug naar Leuven vertrekt om 5u.</p>
+            <p><strong>Menu</strong></p>
+            <p>Duo van zalm - belle vue &amp; tartaar<br /> Wakame salade en zure room<br /> x<br /> Parelhoenfilet met dragonroom<br /> Kort gebakken groentjes<br /> Geroosterde aardappels<br /> x<br /> Tiramisu met perencompote<br /> Crumble van pecannoten &amp; speculaas<br /> x<br /> Koffie of thee met koekjes</p>
+            <p><strong>Vegetarisch menu</strong></p>
+            <p>Bavarois van aubergine met madrasparfum<br /> x<br /> Groenten curry met Raz el Hanout en kaneel<br /> Geroosterde aardappelpartjes<br /> x<br /> Tiramisu met perencompote<br /> Crumble van pecannoten &amp; speculaas<br /> x<br /> Koffie of thee met koekjes</p>
+            <p>&nbsp;</p>
+            <p>Voor meer informatie kan je altijd terecht op onze <a href="https://www.facebook.com/events/3083046055254331/">facebookpagina</a>.</p>
+            <p>Heb je nog vragen? Stuur dan gerust een mailtje naar <a href="mailto:galabal@lbk.be">galabal@lbk.be</a></p>
+        </font></div>
+        <div class="d-block text-center">
+            <a href="https://www.biznizpoint.be">
+                <img src="{% static 'main/sponsors/biznizpoint.jpg' %}"
+                     alt="Biznizpoint logo" title="Biznizpoint logo" height="200" width="400">
+            </a>
+            <a href="https://groupdc.be/nl">
+                <img src="{% static 'main/sponsors/group-dc.png' %}"
+                     alt="Group DC logo" title="Group DC logo" height="200" width="400">
+            </a>
+            <a href="http://www.vbi-kuleuven.be">
+                <img src="{% static 'main/sponsors/vbi.png' %}"
+                     alt="VBI logo" title="VBI logo" height="200" width="400">
+            </a>
+        </div>
+        <br><br>
     </div>
 </div>
 
@@ -132,7 +174,5 @@
         <small>&copy; lbk.be 2019</small>
     </div>
 </footer>
-
-
 </body>
 </html>

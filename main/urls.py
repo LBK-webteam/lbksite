@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('page/<str:page_title>/', views.page, name='page'),
     path('db', views.db, name='db'),
+    path('galabal', views.galabal, name='galabal'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
