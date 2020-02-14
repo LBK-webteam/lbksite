@@ -11,7 +11,6 @@ margin: 0;
 position: relative;
 }
 
-
 /* De banner - het logo en de slider */
 #banner {
 height: 150px;
@@ -178,4 +177,26 @@ border-radius: 10px;
 margin: 30px 5%;
 padding: 20px;
 min-height: 200px;
+}
+
+#pagetext a {
+color: green;
+}
+
+/* Opmaak voor galabal pagina */
+#gala-pagetext {
+background-color: white;
+overflow: auto;
+border-radius: 10px;
+margin: 30px 10%;
+padding: 20px;
+min-height: 200px;
+}
+
+#gala-pagetext a {
+color: green;
+}
+
+#gala-subt {
+font-size: 10;
 }
