@@ -1,4 +1,5 @@
-/* Ervoor zorgen dat de verschillende elementen altijd de waarde van height en width hebben, zelfs met margin en padding */
+
+/* Ervoor zorgen dat margin en padding inbegrepen zijn in de height en width van een element */
 * {
 box-sizing: border-box;
 }
@@ -15,8 +16,9 @@ position: relative;
 #banner {
 height: 150px;
 width: 100%;
-background: rgb(147,193,104);
+background: darkgreen; /* Fallback color indien de achtergrondafbeelding niet geladen kan worden */
 padding: 20px;
+background-image: url('images/banner_background.png')
 }
 
 #lbk-logo {
@@ -39,20 +41,29 @@ padding: 0;
 
 #navbar a {
 padding: 10px 30px;
-line-height: 34px;
+line-height: 16px;
 transition: color 0.5s;
-transition: background-color 0.5s;
+transition: background-color 0.25s;
+color: lightgrey
 }
 
-#navbar a:hover {
-color: black;
-background-color: white;
+#navbar a:hover, #navar a:active {
+color: white;
+background-color: rgb(0,50,0);
+}
+
+#dropdown_werkgroepen div a {
+color: rgb(64,64,64)
+}
+
+#dropdown_werkgroepen div a:hover {
+background-color: rgb(147,193,104)
 }
 
 /* Opmaak voor de footer --PAS #px AAN--  */
 @media  screen and (min-width: 821px) {#footer {
 position: fixed;
-background-color: rgb(64, 64, 64);
+background-color: rgb(200,200,200);
 bottom: 0;
 width: 100%;
 color: white;
