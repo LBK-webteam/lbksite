@@ -35,11 +35,11 @@
 <!-- banner -->
 <div id="banner" class="d-none d-lg-block float-left">
     <div id="lbk-logo">
-        <a href="{% url 'main:home' %}"><img src="{% static 'main/images/lbk_logo.png' %}" alt="LBK logo" title="LBK logo" height=100px></a>
+        <a href="{% url 'main:home' %}"><img src="{% static 'main/images/lbk_logo.png' %}" alt="LBK logo" title="LBK logo" height=80px></a>
     </div>
     <div id="sponsors">
         <a href="https://www.total.be/nl">
-            <img class="img-fluid" src="https://www.total.be/sites/all/themes/custom/business_theme/logo.png" alt="Total logo" title="Total Logo">
+            <img src="{% static 'main/sponsors/total.png' %}" alt="Total logo" title="Total logo"> <!-- TODO: LOGO IETS NAAR BOVEN BEWEGEN -->
         </a>
         <!-- <a href="https://www.cargill.be/nl/home-nl">
             <img src="https://www.cargill.be/image/1432094128551/cargill-logo.png" alt="Cargill Logo" title="Cargill Logo" width="200">
