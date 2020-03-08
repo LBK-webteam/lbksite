@@ -104,8 +104,11 @@ margin-right: auto;
 /* Opmaak van de homepage */
 #overview {
 position: relative;
-height: 1500px;
+height: auto;
+min-height: 1000px;
 margin: auto;
+background-image: url('images/background.jpg');
+background-size: 750px;
 }
 
 .green {
@@ -120,7 +123,7 @@ float: left;
 
 /* De opmaak voor de 3 kaders (per kader) */
 #account, #calendar, #events {
-background-color: rgb(147,193,104);
+background-color: #99CB4A;
 overflow: auto;
 border-radius: 10px;
 padding: 20px;
