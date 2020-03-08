@@ -1,4 +1,6 @@
 
+/* Officiële LBK-kleur voor de site: HEX #99CB4A oftewel RGB 153,203,74 */
+
 /* Ervoor zorgen dat margin en padding inbegrepen zijn in de height en width van een element */
 * {
 box-sizing: border-box;
@@ -23,10 +25,14 @@ background-image: url('images/banner_background.png')
 
 #lbk-logo {
 float: left;
+position: relative;
+top: 5px;
 }
 
 #sponsors {
 float: right;
+position: relative;
+top: -5px;
 }
 
 #sponsors img {
@@ -34,30 +40,25 @@ margin: 0px 20px;
 height: 100px;
 }
 
-.navbar-brand {
-margin: 0;
-padding: 0;
+#navbar-geheel {
+padding: 5px 5px;
 }
 
 #navbar a {
-padding: 10px 30px;
+padding: 10px 25px;
 line-height: 16px;
-transition: color 0.5s;
-transition: background-color 0.25s;
+/* transition: color 0.5s; */
+/* transition: background-color 0.25s; */
 color: lightgrey
 }
 
 #navbar a:hover, #navar a:active {
-color: white;
-background-color: rgb(0,50,0);
+color: #99CB4A;
+/* background-color: #99CB4A; */
 }
 
 #dropdown_werkgroepen div a {
 color: rgb(64,64,64)
-}
-
-#dropdown_werkgroepen div a:hover {
-background-color: rgb(147,193,104)
 }
 
 /* Opmaak voor de footer --PAS #px AAN--  */
