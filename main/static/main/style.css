@@ -87,10 +87,18 @@ color: white;
 text-align: center;
 } */
 
+#logos {
+margin-left: 35px;
+margin-right: 35px;
+display: flex;
+justify-content: space-between;
+}
 
 #footer a img {
-margin-left: 20px;
-margin-right: 20px;
+float: left;
+height: 60px;
+margin-left: auto;
+margin-right: auto;
 }
 
 /* Opmaak van de homepage */
