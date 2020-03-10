@@ -139,7 +139,7 @@ color: white;
 color: white;
 }
 
-#account button {
+#overview button {
 background-color: green;
 border: none;
 border-radius: 5px;
@@ -148,7 +148,7 @@ color: white;
 transition: background-color 0.5s;
 }
 
-#account button:hover {
+#overview button:hover {
 background-color: darkgreen;
 }
 

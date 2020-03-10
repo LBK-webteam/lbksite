@@ -21,6 +21,20 @@ class Page(models.Model):
         return self.page_title
 
 
+class Vacancy(models.Model):
+    company_name = models.CharField(max_length=200)
+    company_logo = models.ImageField(blank=True)
+    vacancy_function = models.CharField(max_length=200)
+    vacancy_description = RichTextField()
+    vacancy_url = models.URLField()
+
+    class Meta:
+        verbose_name_plural = 'Vacancies'
+
+    def __str__(self):
+        return self.vacancy_function + ' ' + self.company_name
+
+
 class Event(models.Model):
     pub_date = models.DateTimeField('Event link online')
     event_title = models.CharField('Titel', max_length=200, primary_key=True)
@@ -45,6 +59,7 @@ class EventReg(models.Model):
 class DBmember(models.Model):
     first_name = models.CharField('Voornaam', max_length=200)
     last_name = models.CharField('Achternaam', max_length=200)
+
     function = models.CharField('Functie', max_length=50, primary_key=True, choices=[
         ('Preses', 'Preses'),
         ('Vice-preses', 'Vice-preses'),
@@ -66,6 +81,7 @@ class DBmember(models.Model):
         ('Cursusdienst verantwoordelijke', 'Cursusdienst verantwoordelijke'),
         ('ICT verantwoordelijke', 'ICT-verantwoordelijke')
     ])
+
     email = models.EmailField('E-mail', null=True)
     phone_number = models.CharField('Gsm-nummer', max_length=20)
     profile_picture = models.ImageField('Profielfoto', upload_to='db')
@@ -75,3 +91,4 @@ class DBmember(models.Model):
 
     def __str__(self):
         return self.function
+
