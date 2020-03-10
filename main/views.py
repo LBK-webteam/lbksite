@@ -35,6 +35,31 @@ def galabal(request):
     context = {'pages': pages}
     return render(request, 'main/galabal.html', context)
 
+
+def br_algemeen(request):
+    pages = Page.objects.all()
+    context = {'pages': pages}
+    return render(request, 'main/br_algemeen.html', context)
+
+
+def br_bedrijven(request):
+    pages = Page.objects.all()
+    context = {'pages': pages}
+    return render(request, 'main/br_bedrijven.html', context)
+
+
+def br_galerij(request):
+    pages = Page.objects.all()
+    context = {'pages': pages}
+    return render(request, 'main/br_galerij.html', context)
+
+
+def br_vacatures(request):
+    pages = Page.objects.all()
+    vacancies = Vacancy.objects.all()
+    context = {'pages': pages, 'vacancies': vacancies}
+    return render(request, 'main/br_vacatures.html', context)
+
 """
 def register(request):
     if request.method == 'POST':

@@ -57,8 +57,12 @@ color: #99CB4A;
 /* background-color: #99CB4A; */
 }
 
-#dropdown_werkgroepen div a {
-color: rgb(64,64,64)
+#navbar .dropdown .dropdown-item {
+color: rgb(64,64,64);
+}
+
+#navbar .dropdown .dropdown-item:hover {
+color: #99CB4A;
 }
 
 /* Opmaak voor de footer --PAS #px AAN--  */
@@ -168,7 +172,7 @@ color: white;
 color: white;
 }
 
-#account button {
+#overview button {
 background-color: green;
 border: none;
 border-radius: 5px;
@@ -177,7 +181,7 @@ color: white;
 transition: background-color 0.5s;
 }
 
-#account button:hover {
+#overview button:hover {
 background-color: darkgreen;
 }
 

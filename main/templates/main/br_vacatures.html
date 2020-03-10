@@ -1,0 +1,41 @@
+{% extends "main/pagetemplate.html" %}
+
+{% load static %}
+
+{% block title %}Vacatures{% endblock %}
+
+{% block content %}
+<!-- overview -->
+<div id="overview" class="green">
+    <div id="pagetext">
+        <h1 class="p-2">Beschikbare vacatures</h1>
+        <div class="container">
+            {% for vacancy in vacancies %}
+            <div class="row">
+                <div class="col-sm">
+                    <div class="float-left p-2">
+                        <img src="{{ vacancy.company_logo.url }}" alt="{{ vacancy.company_name }}" style="width: 160px; height: 200px;">
+                    </div>
+                    <div class="d-block float-left p-2">
+                        <h2>{{ vacancy.vacancy_function }}</h2>
+                        <hr>
+                        <p>{{ vacancy.company_name }}</p>
+                        <p>
+                            <button class="btn1" type="button" data-toggle="collapse" data-target="#vacancy{{ vacancy.id }}" aria-expanded="false" aria-controls="vacancy_desc">
+                            Beschrijving weergeven
+                            </button>
+                        </p>
+                        <div class="collapse" id="vacancy{{ vacancy.id }}">
+                            <div class="card card-body">
+                                {{ vacancy.vacancy_description|safe }}
+                            </div>
+                        </div>
+                        <p><a href="{{ vacancy.vacancy_url }}">Klik hier voor de volledige vacature.</a></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
