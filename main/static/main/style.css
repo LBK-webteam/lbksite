@@ -107,8 +107,8 @@ position: relative;
 height: auto;
 min-height: 1000px;
 margin: auto;
-background-image: url('images/background.jpg');
-background-size: 750px;
+background-image: url('images/background_temp.png');
+background-size: 350px;
 }
 
 .green {
@@ -117,8 +117,25 @@ overflow: auto;
 }
 
 /* De div met de 3 kaders links*/
-#personal {
+#evenementen {
 float: left;
+padding: 0px;
+width: 27%;
+}
+
+#hr-event {
+border: 1px solid black;
+margin: 8px 0px
+}
+
+.remove-margin {
+margin-bottom: 0px
+}
+
+#berichten {
+float: right;
+padding: 0px 10px;
+width: 27%;
 }
 
 /* De opmaak voor de 3 kaders (per kader) */
@@ -174,7 +191,7 @@ margin-right: 5px;
 /* Opmaak voor het kader met de posts */
 
 #post {
-background-color: rgb(224, 224, 224);
+background-color: rgb(200, 200, 200);
 border-radius: 10px;
 padding: 20px;
 min-height: 200px;

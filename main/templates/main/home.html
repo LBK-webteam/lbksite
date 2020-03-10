@@ -98,12 +98,7 @@
     </div>
 </nav>
 
-<!-- overview -->
-<div id="overview" class="row">
-    <div id="personal" class="d-none d-xl-block col-3">
-        <div id="account" class="m-3">
-            <h3>De nieuwe site is in volle ontwikkeling! Nog niet alles is functioneel en wordt in de loop van het jaar geüpdatet.</h3>
-            <!-- Hier komt alles over inloggen en dergelijke.
+<!-- Hier komt alles over inloggen en dergelijke.
             <div id="account-title">
                 <h2>Aanmelden</h2>
             </div>
@@ -134,9 +129,16 @@
                 <br><br>
                 <a href="#">Wachtwoord vergeten?</a>
             </div>-->
+
+<!-- overview -->
+<div id="overview" class="row">
+    <div id="evenementen" class="d-none d-xl-block">
+        <div id="account" class="m-3">
+            <h3 class="remove-margin">Evenementen</h3>
+            <hr id="hr-event">
         </div>
     </div>
-    <div id="content" class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div id="berichten" class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         {% if posts %}
         {% for post in posts %}
         <div id="post" class="d-block my-3">
@@ -146,7 +148,7 @@
         </div>
         {% endfor %}
         {% else %}
-        <div id="post" class="d-block my-3">
+        <div id="nopost" class="d-block my-3">
             <h1>There are no posts yet.</h1>
         </div>
         {% endif %}
