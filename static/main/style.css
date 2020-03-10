@@ -1,4 +1,7 @@
-/* Ervoor zorgen dat de verschillende elementen altijd de waarde van height en width hebben, zelfs met margin en padding */
+
+/* Officiële LBK-kleur voor de site: HEX #99CB4A oftewel RGB 153,203,74 */
+
+/* Ervoor zorgen dat margin en padding inbegrepen zijn in de height en width van een element */
 * {
 box-sizing: border-box;
 }
@@ -13,46 +16,59 @@ position: relative;
 
 /* De banner - het logo en de slider */
 #banner {
-height: 150px;
+height: 130px;
 width: 100%;
-background: rgb(147,193,104);
+background: darkgreen; /* Fallback color indien de achtergrondafbeelding niet geladen kan worden */
 padding: 20px;
+background-image: url('images/banner_background.png')
 }
 
 #lbk-logo {
 float: left;
+position: relative;
+top: 5px;
 }
 
 #sponsors {
 float: right;
+position: relative;
+top: -5px;
 }
 
 #sponsors img {
-margin: 0px 25px;
+margin: 0px 20px;
 height: 100px;
 }
 
-.navbar-brand {
-margin: 0;
-padding: 0;
+#navbar-geheel {
+padding: 5px 5px;
 }
 
 #navbar a {
-padding: 10px 30px;
-line-height: 34px;
-transition: color 0.5s;
-transition: background-color 0.5s;
+padding: 10px 25px;
+line-height: 16px;
+/* transition: color 0.5s; */
+/* transition: background-color 0.25s; */
+color: lightgrey
 }
 
-#navbar a:hover {
-color: black;
-background-color: white;
+#navbar a:hover, #navar a:active {
+color: #99CB4A;
+/* background-color: #99CB4A; */
+}
+
+#navbar .dropdown .dropdown-item {
+color: rgb(64,64,64);
+}
+
+#navbar .dropdown .dropdown-item:hover {
+color: #99CB4A;
 }
 
 /* Opmaak voor de footer --PAS #px AAN--  */
 @media  screen and (min-width: 821px) {#footer {
 position: fixed;
-background-color: rgb(64, 64, 64);
+background-color: rgb(200,200,200);
 bottom: 0;
 width: 100%;
 color: white;
@@ -75,17 +91,28 @@ color: white;
 text-align: center;
 } */
 
+#logos {
+margin-left: 35px;
+margin-right: 35px;
+display: flex;
+justify-content: space-between;
+}
 
 #footer a img {
-margin-left: 20px;
-margin-right: 20px;
+float: left;
+height: 60px;
+margin-left: auto;
+margin-right: auto;
 }
 
 /* Opmaak van de homepage */
 #overview {
 position: relative;
-height: 1500px;
+height: auto;
+min-height: 1000px;
 margin: auto;
+background-image: url('images/background_temp.png');
+background-size: 350px;
 }
 
 .green {
@@ -94,13 +121,30 @@ overflow: auto;
 }
 
 /* De div met de 3 kaders links*/
-#personal {
+#evenementen {
 float: left;
+padding: 0px;
+width: 27%;
+}
+
+#hr-event {
+border: 1px solid black;
+margin: 8px 0px
+}
+
+.remove-margin {
+margin-bottom: 0px
+}
+
+#berichten {
+float: right;
+padding: 0px 10px;
+width: 27%;
 }
 
 /* De opmaak voor de 3 kaders (per kader) */
 #account, #calendar, #events {
-background-color: rgb(147,193,104);
+background-color: #99CB4A;
 overflow: auto;
 border-radius: 10px;
 padding: 20px;
@@ -128,7 +172,7 @@ color: white;
 color: white;
 }
 
-#account button {
+#overview button {
 background-color: green;
 border: none;
 border-radius: 5px;
@@ -137,7 +181,7 @@ color: white;
 transition: background-color 0.5s;
 }
 
-#account button:hover {
+#overview button:hover {
 background-color: darkgreen;
 }
 
@@ -151,7 +195,7 @@ margin-right: 5px;
 /* Opmaak voor het kader met de posts */
 
 #post {
-background-color: rgb(224, 224, 224);
+background-color: rgb(200, 200, 200);
 border-radius: 10px;
 padding: 20px;
 min-height: 200px;
