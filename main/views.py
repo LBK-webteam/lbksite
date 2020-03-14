@@ -30,10 +30,12 @@ def db(request):
     return render(request, 'main/db.html', context)
 
 
+"""
 def galabal(request):
     pages = Page.objects.all()
     context = {'pages': pages}
     return render(request, 'main/galabal.html', context)
+    """
 
 
 def br_algemeen(request):
