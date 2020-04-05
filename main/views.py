@@ -3,8 +3,7 @@ Hier wordt de home pagina view gelinkt met een html script, rendered met python 
 """
 
 from django.shortcuts import render, redirect, get_object_or_404
-#from django.contrib.auth import authenticate, login
-#from .forms import RegisterForm
+from django.http import HttpResponseRedirect
 
 from .models import *
 
@@ -38,6 +37,12 @@ def galabal(request):
     """
 
 
+def success(request):
+    pages = Page.objects.all()
+    context = {'pages': pages}
+    return render(request, 'main/success.html', context)
+
+
 def br_algemeen(request):
     pages = Page.objects.all()
     context = {'pages': pages}
@@ -61,6 +66,56 @@ def br_vacatures(request):
     vacancies = Vacancy.objects.all()
     context = {'pages': pages, 'vacancies': vacancies}
     return render(request, 'main/br_vacatures.html', context)
+
+
+def opkomend_formulieren(request):
+    pages = Page.objects.all()
+    if request.method == 'POST':
+        form = RunningForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/success')
+    else:
+        form = RunningForm()
+    context = {'pages': pages, 'form': form}
+    return render(request, 'main/opkomend_formulieren.html', context)
+
+
+def opkomend_brieven(request):
+    pages = Page.objects.all()
+    runnings = Running.objects.filter(formtype='A')
+    dbfuncties = ['Preses',
+                  'Vice-preses',
+                  'Penningmeester',
+                  'Secretaris',
+                  'Gnorgl verantwoordelijke',
+                  'Gnorgl boekhouder',
+                  'Baarr verantwoordelijke',
+                  'Baarr boekhouder',
+                  'Activiteiten verantwoordelijke',
+                  'Sport verantwoordelijke',
+                  'Cultuur verantwoordelijke',
+                  'Internationaal verantwoordelijke',
+                  'Bedrijvenrelaties verantwoordelijke',
+                  'Onderwijs verantwoordelijke',
+                  'Onderwijs secretaris',
+                  'Logistiek verantwoordelijke',
+                  'Cursusdienst verantwoordelijke',
+                  'ICT verantwoordelijke']
+    context = {'pages': pages, 'runnings': runnings, 'dbfuncties': dbfuncties}
+    return render(request, 'main/opkomend_brieven.html', context)
+
+
+def neucom(request):
+    pages = Page.objects.all()
+    context = {'pages': pages}
+    return render(request, 'main/neucom.html', context)
+
+
+def officiele_documenten(request):
+    pages = Page.objects.all()
+    context = {'pages': pages}
+    return render(request, 'main/officiele_documenten.html', context)
 
 """
 def register(request):

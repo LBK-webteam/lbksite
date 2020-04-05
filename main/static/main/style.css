@@ -113,6 +113,7 @@ min-height: 1000px;
 margin: auto;
 background-image: url('images/background_temp.png');
 background-size: 350px;
+padding-bottom: 100px;
 }
 
 .green {
@@ -242,4 +243,35 @@ color: green;
 
 #gala-subt {
 font-size: 10;
+}
+
+/* Opkomend formuliertjes */
+
+td {
+padding: 15px 50px 15px 0px;
+}
+
+form {
+padding: 15px 50px;
+}
+
+#indienen {
+background-color: green;
+border: none;
+border-radius: 5px;
+padding: 10px 25px;
+color: white;
+transition: background-color 0.5s;
+}
+
+#indienen:hover {
+background-color: darkgreen;
+}
+
+textarea {
+width: 800px;
+}
+
+select {
+width: 300px;
 }

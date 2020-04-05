@@ -1,7 +1,13 @@
 """
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from django.forms import ModelForm
+from .models import RunningForm
+
+
+class RunningForm(forms.Form):
+    firstname = forms.CharField(label='Voornaam', max_length=100)
+    lastname = forms.CharField(label='Achternaam', max_length=100)
+    email = forms.EmailField(label='E-mailadres')
+    formtype = forms.ChoiceField(label='Formulier type')
 
 
 

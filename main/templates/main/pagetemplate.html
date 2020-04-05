@@ -12,11 +12,25 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Scriptje voor timing -->
+    <script>
+    $(document).ready(function(){
+    $('.opkomend-tab').hide();
+    var now = new Date();
+    var deadline1 = new Date(2020, 3, 6, 0, 0);
+    var deadline2 = new Date(2020, 3, 19, 23, 59);
+    if (now > deadline1) {
+    if (now < deadline2) {
+    $('.opkomend-tab').show();
+    }}
+    });
+    </script>
 
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -66,6 +80,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'main:home' %}">Home</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                Reglementen <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/neucom">NeuCom</a>
+                    <a class="dropdown-item" href="/officiele_documenten">Officiële documenten</a>
+            </li>
             <li id="dropdown_werkgroepen" class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
                 Werkgroepen <span class="caret"></span>
@@ -85,9 +107,18 @@
                     <a class="dropdown-item" href="/br/bedrijven">Voor bedrijven</a>
                     <!-- <a class="dropdown-item" href="/br/galerij">Galerij</a> -->
                     <a class="dropdown-item" href="/br/vacatures">Vacatures</a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="https://lbk.cursusdienst.org/">Cursusdienst</a></li>
             <li class="nav-item"><a class="nav-link" href="http://lbk.ulyssis.be/wiki/index.php?title=Main_Page">Examenwiki</a></li>
             <!-- <li class="nav-item"><a class="nav-link" href="/galabal">Galabal</a></li> -->
+            <li class="nav-item dropdown opkomend-tab">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                Opkomend <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/opkomend/formulieren">Formulieren</a>
+                    <a class="dropdown-item" href="/opkomend/brieven">Motivatiebrieven van kandidaten</a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="/db">Contact</a></li>
         </ul>
         <!-- Nodig wanneer de site tweetalig is
