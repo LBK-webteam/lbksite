@@ -21,13 +21,16 @@
     <!-- Scriptje voor timing -->
     <script>
     $(document).ready(function(){
-    $('.opkomend-tab').hide();
+    $('#formulieren').hide();
+    $('#brieven').hide();
     var now = new Date();
     var deadline1 = new Date(2020, 3, 6, 0, 0);
     var deadline2 = new Date(2020, 3, 19, 23, 59);
     if (now > deadline1) {
-    if (now < deadline2) {
-    $('.opkomend-tab').show();
+    $('#formulieren').show();
+    if (now > deadline2) {
+    $('#brieven').show();
+    $('#formulieren').hide();
     }}
     });
     </script>
@@ -111,13 +114,13 @@
             <li class="nav-item"><a class="nav-link" href="https://lbk.cursusdienst.org/">Cursusdienst</a></li>
             <li class="nav-item"><a class="nav-link" href="http://lbk.ulyssis.be/wiki/index.php?title=Main_Page">Examenwiki</a></li>
             <!-- <li class="nav-item"><a class="nav-link" href="/galabal">Galabal</a></li> -->
-            <li class="nav-item dropdown opkomend-tab">
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
                 Opkomend <span class="caret"></span>
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/opkomend/formulieren">Formulieren</a>
-                    <a class="dropdown-item" href="/opkomend/brieven">Motivatiebrieven van kandidaten</a>
+                    <a class="dropdown-item" id="formulieren" href="/opkomend/formulieren">Formulieren</a>
+                    <a class="dropdown-item" id="brieven" href="/opkomend/brieven">Motivatiebrieven van kandidaten</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="/db">Contact</a></li>
         </ul>
