@@ -70,7 +70,7 @@ background-color: rgb(230,230,230);
 
 #nav-werkgroepen {
 float: left;
-width: 14%;
+width: 13.3%;
 margin-right: 5px;
 padding-top: 4px;
 background-color: rgb(100,100,100);
@@ -89,7 +89,7 @@ padding-right: 4px;
 }
 
 .werkgroep img {
-height: 2vw;
+height: 1.8vw;
 padding-left: 5px;
 }
 
