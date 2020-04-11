@@ -16,6 +16,7 @@ class Post(models.Model):
 class Page(models.Model):
     page_title = models.CharField(max_length=200, primary_key=True)
     page_text = RichTextField(blank=True, null=True)
+    page_index = models.IntegerField(default=0)
 
     def __str__(self):
         return self.page_title

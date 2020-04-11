@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/lbksite_virtenv.iml" filepath="$PROJECT_DIR$/.idea/lbksite_virtenv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lbksite.iml" filepath="$PROJECT_DIR$/.idea/lbksite.iml" />
     </modules>
   </component>
 </project>
