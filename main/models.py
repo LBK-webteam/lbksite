@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 from ckeditor.fields import RichTextField
 
@@ -75,7 +76,6 @@ class DBmember(models.Model):
         ('Cultuur verantwoordelijke', 'Cultuur verantwoordelijke'),
         ('Internationaal verantwoordelijke', 'Internationaal verantwoordelijke'),
         ('Bedrijvenrelaties verantwoordelijke', 'Bedrijvenrelaties verantwoordelijke'),
-        ('Bedrijvenrelaties vice-verantwoordelijke', 'Bedrijvenrelaties vice-verantwoordelijke'),
         ('Onderwijs verantwoordelijke', 'Onderwijs verantwoordelijke'),
         ('Onderwijs secretaris', 'Onderwijs secretaris'),
         ('Logistiek verantwoordelijke', 'Logistiek verantwoordelijke'),
@@ -93,3 +93,76 @@ class DBmember(models.Model):
     def __str__(self):
         return self.function
 
+
+class Running(models.Model):
+    first_name = models.CharField('Voornaam', max_length=100)
+    last_name = models.CharField('Achternaam', max_length=100)
+    email = models.EmailField('E-mail')
+    formtype = models.CharField('Type formulier', max_length=100, choices=[
+        ('A', 'Formulier A'),
+        ('B', 'Formulier B'),
+        ('C', 'Formulier C')
+    ])
+
+    function = models.CharField('Functie', max_length=50, choices=[
+        ('Preses', 'Preses'),
+        ('Vice-preses', 'Vice-preses'),
+        ('Penningmeester', 'Penningmeester'),
+        ('Secretaris', 'Secretaris'),
+        ('Gnorgl verantwoordelijke', 'Gnorgl verantwoordelijke'),
+        ('Gnorgl boekhouder', 'Gnorgl boekhouder'),
+        ('Baarr verantwoordelijke', 'Baarr verantwoordelijke'),
+        ('Baarr boekhouder', 'Baarr boekhouder'),
+        ('Activiteiten verantwoordelijke', 'Activiteiten verantwoordelijke'),
+        ('Sport verantwoordelijke', 'Sport verantwoordelijke'),
+        ('Cultuur verantwoordelijke', 'Cultuur verantwoordelijke'),
+        ('Internationaal verantwoordelijke', 'Internationaal verantwoordelijke'),
+        ('Bedrijvenrelaties verantwoordelijke', 'Bedrijvenrelaties verantwoordelijke'),
+        ('Onderwijs verantwoordelijke', 'Onderwijs verantwoordelijke'),
+        ('Onderwijs secretaris', 'Onderwijs secretaris'),
+        ('Logistiek verantwoordelijke', 'Logistiek verantwoordelijke'),
+        ('Cursusdienst verantwoordelijke', 'Cursusdienst verantwoordelijke'),
+        ('ICT verantwoordelijke', 'ICT-verantwoordelijke')
+    ], null=True, blank=True)
+    workgroup = models.CharField('Werkgroep', max_length=50, choices=[
+        ('Penning', 'Penning'),
+        ('Communicatie', 'Communicatie'),
+        ('Gnorgl', 'Gnorgl'),
+        ('Baarr', 'Baarr'),
+        ('Activiteiten', 'Activiteiten'),
+        ('Sport', 'Sport'),
+        ('Cultuur', 'Cultuur'),
+        ('Internationaal', 'Internationaal'),
+        ('Bedrijvenrelaties', 'Bedrijvenrelaties'),
+        ('Onderwijs', 'Onderwijs'),
+        ('Logistiek', 'Logistiek'),
+        ('Cursusdienst', 'Cursusdienst'),
+        ('ICT', 'ICT'),
+        ('Onthaal', 'Onthaal'),
+        ('Revue', 'Revue'),
+        ('IFR', 'IFR'),
+        ('Galabal', 'Galabal')
+    ], null=True, blank=True)
+    motivation = models.TextField('Motivatie', null=True, blank=True)
+    motivation_b = models.TextField('Motivatie (B)', null=True, blank=True)
+    members = models.TextField('Leden van de werkgroep', null=True, blank=True)
+    members_c = models.TextField('Leden van de lolploeg', null=True, blank=True)
+    q1 = models.TextField('Bestaansreden LBK', null=True, blank=True)
+    q2 = models.TextField('LBK in de toekomst', null=True, blank=True)
+    q3 = models.TextField('Rol binnen LBK', null=True, blank=True)
+    q4 = models.TextField('Verbetering/Focus', null=True, blank=True)
+    q5 = models.TextField('Waarom jij?', null=True, blank=True)
+    q1b = models.TextField('Verbetering LBK toekomst', null=True, blank=True)
+    q2b = models.TextField('Samenwerking team', null=True, blank=True)
+
+    def __str__(self):
+        return self.first_name + ' ' + self.last_name + ' ' + self.formtype
+
+    class Meta:
+        verbose_name = 'Form'
+
+
+class RunningForm(ModelForm):
+    class Meta:
+        model = Running
+        fields = '__all__'

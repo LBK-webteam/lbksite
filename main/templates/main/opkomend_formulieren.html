@@ -1,0 +1,111 @@
+{% extends "main/pagetemplate.html" %}
+
+{% load static %}
+
+{% block title %}Formulieren kandidatuur{% endblock %}
+
+{% block content %}
+
+<script>
+$(document).ready(function(){
+$('.formA').hide();
+$('.formB').hide();
+$('.formC').hide();
+$("#{{ form.formtype.id_for_label }}").change(function() {
+  if ($(this).val() == "A") {
+    $('.formA').show();
+    $('.formB').hide();
+    $('.formC').hide();
+  } else if ($(this).val() == "B") {
+    $('.formA').hide();
+    $('.formB').show();
+    $('.formC').hide();
+  } else if ($(this).val() == "C") {
+    $('.formA').hide();
+    $('.formB').hide();
+    $('.formC').show();
+  }
+});
+$("#{{ form.formtype.id_for_label }}").trigger("change");
+});
+</script>
+
+<!-- overview -->
+<div id="overview" class="green opkomend">
+    <div id="pagetext">
+        <h1>Formulieren</h1>
+        <hr>
+        <p>Hier kan je je formulier indienen, indien je wil opkomen.</p>
+        <p>Formulier A is het formulier voor alle functies binnen het dagelijks bestuur.
+            Indien je opkomt als verantwoordelijke voor een functie binnen het dagelijks bestuur, zoals (vice-)preses of Gnorgl verantwoordelijke, kies je formulier A.</p>
+        <p>Formulier B is het formulier voor je werkgroep.
+        Indien je opkomt als verantwoordelijke voor een functie met een werkgroep, zoals Gnorgl verantwoordelijke of Revue verantwoordelijke, kies je formulier B.</p>
+        <p><strong>Functies die én deel uitmaken van het dagelijks bestuur én een werkgroep hebben, moeten beiden invullen.</strong></p>
+        <p>Indien je formulier A indient, zullen jouw naam en antwoord op de vragen over motivatie op de site weergegeven worden, onder de categorie 'Motivatiebrieven van kandidaten'.</p>
+        <p>Niet-verkiesbare kandidaten worden tijdens de verkiezingen op het stemformulier in groep vermeld onder de naam ‘lolploeg’ (Formulier C). Hun verkiezingsuitslag is van geen enkele
+        betekenis; zij kunnen op basis hiervan het daaropvolgend jaar in geen geval een functie uitoefenen.</p>
+        <hr>
+        <form action="/opkomend/formulieren" method="POST">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td><label for="{{ form.first_name.id_for_label }}">Voornaam</label></td>
+                    <td>{{ form.first_name }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ form.last_name.id_for_label }}">Achternaam</label></td>
+                    <td>{{ form.last_name }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ form.email.id_for_label }}">E-mailadres</label></td>
+                    <td>{{ form.email }}</td>
+                </tr>
+                <tr>
+                    <td><label for="{{ form.formtype.id_for_label }}">Formulier type</label></td>
+                    <td>{{ form.formtype }}</td>
+                </tr>
+                <tr class="formA">
+                    <td><label for="{{ form.function.id_for_label }}" class="formAquestion">Functie</label></td>
+                    <td>{{ form.function }}</td>
+                </tr>
+                <tr class="formB">
+                    <td><label for="{{ form.workgroup.id_for_label }}" class="formBquestion">Werkgroep</label></td>
+                    <td>{{ form.workgroup }}</td>
+                </tr>
+            </table>
+            <div class="formA">
+                <hr><label for="{{ form.motivation.id_for_label }}" class="formAquestion">Motivatie</label><br>
+                {{ form.motivation }}<br>
+                <hr><label for="{{ form.q1.id_for_label }}" class="formAquestion">Wat is voor jou de bestaansreden van LBK?</label><br>
+                {{ form.q1 }}<br>
+                <hr><label for="{{ form.q2.id_for_label }}" class="formAquestion">Waar moet LBK over 5 jaar staan?
+                    En welke dingen moeten verbeterd worden om daar te geraken?</label><br>
+                {{ form.q2 }}<br>
+                <hr><label for="{{ form.q3.id_for_label }}" class="formAquestion">Welke rol speelt jouw gekozen functie binnen LBK? </label><br>
+                {{ form.q3 }}<br>
+                <hr><label for="{{ form.q4.id_for_label }}" class="formAquestion">Welke zaken binnen jouw functie kunnen verbeterd worden?
+                    Op welke zaken binnen deze functie zou jij je volgend jaar op willen focussen?</label><br>
+                {{ form.q4 }}<br>
+                <hr><label for="{{ form.q5.id_for_label }}" class="formAquestion">Waarom ben jij de geschikte persoon voor deze functie?
+                    En waarom zou jij geschikt zijn als lid van het dagelijks bestuur?</label><br>
+                {{ form.q5 }}<br>
+            </div>
+            <div class="formB">
+                <hr><label for="{{ form.members.id_for_label }}" class="formBquestion">Leden van de werkgroep</label><br>
+                {{ form.members }}<br>
+                <hr><label for="{{ form.members.id_for_label }}" class="formBquestion">Motivatie</label><br>
+                {{ form.motivation_b }}<br>
+                <hr><label for="{{ form.members.id_for_label }}" class="formBquestion">Hoe kan jij ervoor zorgen dat LBK in de toekomst zal verbeteren?</label><br>
+                {{ form.q1b }}<br>
+                <hr><label for="{{ form.members.id_for_label }}" class="formBquestion">Hoe zie je de samenwerking met je team?</label><br>
+                {{ form.q2b }}<br>
+            </div>
+            <div class="formC">
+                <hr><label for="{{ form.members.id_for_label }}" class="formCquestion">Leden van de lolploeg</label><br>
+                {{ form.members_c }}<br>
+            </div>
+            <input id="indienen" type="submit" value="Indienen">
+        </form>
+    </div>
+</div>
+{% endblock %}
