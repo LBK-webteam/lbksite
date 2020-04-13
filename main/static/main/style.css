@@ -1,4 +1,3 @@
-
 /* Officiële LBK-kleur voor de site: HEX #99CB4A oftewel RGB 153,203,74 */
 
 /* Ervoor zorgen dat margin en padding inbegrepen zijn in de height en width van een element */
@@ -85,12 +84,18 @@ height: 2.2vw;
 
 .werkgroep .icoon {
 width: 2.2vw;
-padding-right: 4px;
+/* padding: 3px 5px 3px 4px; */
+padding: 3px 3px;
+padding-right: 5px;
 }
 
 .werkgroep img {
 height: 1.8vw;
-padding-left: 5px;
+padding-left: 8px;
+}
+
+.werkgroep .link {
+padding: 3px 3px;
 }
 
 .werkgroep a {
@@ -246,12 +251,14 @@ padding: 10px 0;
 
 /* Opmaak voor standaard tekstpagina's */
 #pagetext {
+float: left;
 background-color: white;
 overflow: auto;
 border-radius: 10px;
-margin: 30px 5%;
+margin: 25px 2%;
 padding: 20px;
 min-height: 200px;
+width: 80%;
 }
 
 #pagetext a {

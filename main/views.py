@@ -35,37 +35,35 @@ def galabal(request):
     context = {'pages': pages}
     return render(request, 'main/galabal.html', context)
     """
-<<<<<<< HEAD
-=======
+
 
 
 def success(request):
     pages = Page.objects.all()
     context = {'pages': pages}
     return render(request, 'main/success.html', context)
->>>>>>> c81f19b1e1ecb4992a02cddbb27603835b563af6
 
 
 def br_algemeen(request):
-    Page.objects.order_by('page_index')
+    pages = Page.objects.order_by('page_index')
     context = {'pages': pages}
     return render(request, 'main/br_algemeen.html', context)
 
 
 def br_bedrijven(request):
-    Page.objects.order_by('page_index')
+    pages = Page.objects.order_by('page_index')
     context = {'pages': pages}
     return render(request, 'main/br_bedrijven.html', context)
 
 
 def br_galerij(request):
-    Page.objects.order_by('page_index')
+    pages = Page.objects.order_by('page_index')
     context = {'pages': pages}
     return render(request, 'main/br_galerij.html', context)
 
 
 def br_vacatures(request):
-    Page.objects.order_by('page_index')
+    pages = Page.objects.order_by('page_index')
     vacancies = Vacancy.objects.all()
     context = {'pages': pages, 'vacancies': vacancies}
     return render(request, 'main/br_vacatures.html', context)
