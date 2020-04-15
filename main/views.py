@@ -37,9 +37,8 @@ def galabal(request):
     """
 
 
-
 def success(request):
-    pages = Page.objects.all()
+    pages = Page.objects.order_by('page_index')
     context = {'pages': pages}
     return render(request, 'main/success.html', context)
 
@@ -70,7 +69,7 @@ def br_vacatures(request):
 
 
 def opkomend_formulieren(request):
-    pages = Page.objects.all()
+    pages = Page.objects.order_by('page_index')
     if request.method == 'POST':
         form = RunningForm(request.POST)
         if form.is_valid():
@@ -83,7 +82,7 @@ def opkomend_formulieren(request):
 
 
 def opkomend_brieven(request):
-    pages = Page.objects.all()
+    pages = Page.objects.order_by('page_index')
     runnings = Running.objects.filter(formtype='A')
     dbfuncties = ['Preses',
                   'Vice-preses',
@@ -108,13 +107,13 @@ def opkomend_brieven(request):
 
 
 def neucom(request):
-    pages = Page.objects.all()
+    pages = Page.objects.order_by('page_index')
     context = {'pages': pages}
     return render(request, 'main/neucom.html', context)
 
 
 def officiele_documenten(request):
-    pages = Page.objects.all()
+    pages = Page.objects.order_by('page_index')
     context = {'pages': pages}
     return render(request, 'main/officiele_documenten.html', context)
 
