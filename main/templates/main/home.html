@@ -6,16 +6,28 @@
 
 {% block content %}
 
-<!-- Evenementenlijst-->
-<div id="evenementen" class="d-none d-xl-block">
-    <div id="account" class="m-3">
-        <h3 class="remove-margin">Evenementen</h3>
-        <hr id="hr-event">
-        <p>Coming soon</p>
-    </div>
+<!-- Prikbord NIEUW -->
+<div id="prikbord" class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+    <h2>Prikbord</h2>
+    <hr class="thicc">
+    {% if posts %}
+        {% for post in posts %}
+        <div id="post" class="d-block my-3">
+            <h4>{{ post.post_title }}</h4>
+            <hr>
+            <p>{{ post.post_text|safe }}</p>
+            <hr class="thinn">
+        </div>
+        {% endfor %}
+        {% else %}
+        <div id="nopost" class="d-block my-3">
+            <h1>There are no posts yet.</h1>
+        </div>
+        {% endif %}
 </div>
-<!-- Berichten -->
-<div id="berichten" class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+
+<!-- Berichten OUD -->
+<!-- <div id="prikbord" class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
         {% if posts %}
         {% for post in posts %}
         <div id="post" class="d-block my-3">
@@ -29,6 +41,16 @@
             <h1>There are no posts yet.</h1>
         </div>
         {% endif %}
+    </div> -->
+
+<!-- Evenementenlijst-->
+<div id="evenementen" class="d-none d-xl-block">
+    <div id="account" class="m-3">
+        <h2 class="remove-margin">Evenementen</h2>
+        <hr class="thicc">
+        <p>Coming soon</p>
+        <p id="fucking-ruben">(Ruben fix die kalender eens)</p>
     </div>
+</div>
 
 {% endblock %}

@@ -76,16 +76,18 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/neucom">NeuCom</a>
                     <a class="dropdown-item" href="/officiele_documenten">Officiële documenten</a>
+                </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                Bedrijvenrelaties <span class="caret"></span>
+                Bedrijven<span class="caret"></span>
                 </a>
                 <div class="dropdown-menu">
                     <!-- <a class="dropdown-item" href="/br/algemeen">Algemene informatie</a> -->
                     <a class="dropdown-item" href="/br/bedrijven">Voor bedrijven</a>
                     <!-- <a class="dropdown-item" href="/br/galerij">Galerij</a> -->
                     <a class="dropdown-item" href="/br/vacatures">Vacatures</a>
+                </div>
             </li>
             <li class="nav-item"><a class="nav-link" href="https://lbk.cursusdienst.org/">Cursusdienst</a></li>
             <li class="nav-item"><a class="nav-link" href="http://lbk.ulyssis.be/wiki/index.php?title=Main_Page">Examenwiki</a></li>
@@ -97,8 +99,10 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" id="formulieren" href="/opkomend/formulieren">Formulieren</a>
                     <a class="dropdown-item" id="brieven" href="/opkomend/brieven">Motivatiebrieven van kandidaten</a>
+                </div>
             </li>
             <li class="nav-item"><a class="nav-link" href="/db">Contact</a></li>
+            <li class="nav-item" id="admin-link"><a class="nav-link" href="/admin">Admin</a></li>
         </ul>
         <!-- Nodig wanneer de site tweetalig is
         <ul class="navbar-nav ml-auto">
@@ -152,14 +156,16 @@
 <div id="overview" class="row">
     <!-- Navigatiebalk wekgroepen -->
     <div id="nav-werkgroepen">
-        {% for page in pages %}
-            <table class="werkgroep">
+        <p id="nav-wg-titel">Werkgroepen</p>
+        <hr id="nav-wg-streep">
+        <table class="werkgroep">
+            {% for page in pages %}
                 <tr>
                     <td class="icoon"><img src="{{ page.page_werkgroeplogo.url }}"></td>
                     <td class="link"><a class="dropdown-item" href="/page/{{ page.page_title }}/">{{ page.page_title }}</a></td>
                 </tr>
-            </table>
-        {% endfor %}
+            {% endfor %}
+        </table>
     </div>
     <!-- Pagina-inhoud -->
     {% block content %}{% endblock %}
