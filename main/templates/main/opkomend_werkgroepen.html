@@ -1,0 +1,47 @@
+{% extends "main/pagetemplate.html" %}
+
+{% load static %}
+
+{% block title %}Motivatiebrieven Kandidatuur{% endblock %}
+
+{% block content %}
+<!-- overview -->
+    <div id="pagetext">
+        <h1>Motivatiebrieven van kandidaten</h1>
+        <hr>
+        {% for dbfunctie in dbfuncties %}
+        <h5>{{ dbfunctie }}</h5>
+        <hr>
+        {% for candidate in runnings %}
+        {% if candidate.function == dbfunctie %}
+        <p>{{ candidate.first_name }} {{ candidate.last_name }}</p>
+        <p>
+            <button class="btn1" type="button" data-toggle="collapse" data-target="#candidate{{ candidate.id }}"
+                    aria-expanded="false" aria-controls="cand_letter">
+                Brief weergeven
+            </button>
+        </p>
+        <div class="collapse" id="candidate{{ candidate.id }}">
+            <div class="card card-body">
+                <p><strong>Motivatie</strong></p>
+                <p>{{ candidate.motivation }}</p>
+                <p><strong>Wat is voor jou de bestaansreden van LBK?</strong></p>
+                <p>{{ candidate.q1 }}</p>
+                <p><strong>Waar moet LBK over 5 jaar staan?
+                    En welke dingen moeten verbeterd worden om daar te geraken?</strong></p>
+                <p>{{ candidate.q2 }}</p>
+                <p><strong>Welke rol speelt deze functie binnen LBK? </strong></p>
+                <p>{{ candidate.q3 }}</p>
+                <p><strong>Welke zaken binnen jouw functie kunnen verbeterd worden?
+                    Op welke zaken binnen deze functie zou jij je volgend jaar op willen focussen?</strong></p>
+                <p>{{ candidate.q4 }}</p>
+                <p><strong>Waarom ben jij de geschikte persoon voor deze functie?
+                    En waarom zou jij geschikt zijn als lid van het dagelijks bestuur?</strong></p>
+                <p>{{ candidate.q5 }}</p>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
