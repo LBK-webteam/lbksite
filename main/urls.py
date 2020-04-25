@@ -17,6 +17,7 @@ urlpatterns = [
     path('br/vacatures', views.br_vacatures, name='br_vacatures'),
     path('opkomend/formulieren', views.opkomend_formulieren, name='opkomend_formulieren'),
     path('opkomend/brieven', views.opkomend_brieven, name='opkomend_brieven'),
+    path('opkomend/werkgroepen', views.opkomend_werkgroepen, name='opkomend_werkgroepen'),
     path('neucom', views.neucom, name='neucom'),
     path('officiele_documenten', views.officiele_documenten, name='officiele_documenten'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -142,7 +142,9 @@ class Running(models.Model):
         ('Onthaal', 'Onthaal'),
         ('Revue', 'Revue'),
         ('IFR', 'IFR'),
-        ('Galabal', 'Galabal')
+        ('Galabal', 'Galabal'),
+        ('IAAS', 'IAAS'),
+        ('Bloedserieus', 'Bloedserieus'),
     ], null=True, blank=True)
     motivation = models.TextField('Motivatie', null=True, blank=True)
     motivation_b = models.TextField('Motivatie (B)', null=True, blank=True)
