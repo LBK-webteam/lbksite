@@ -1,4 +1,3 @@
-
 /* Officiële LBK-kleur voor de site: HEX #99CB4A oftewel RGB 153,203,74 */
 
 /* Ervoor zorgen dat margin en padding inbegrepen zijn in de height en width van een element */
@@ -8,7 +7,7 @@ box-sizing: border-box;
 
 /* Voor heel de pagina */
 body {
-font-family: "Trebuchet MS", Helvetica, sans-serif;
+font-family: "Segoe UI", Helvetica, sans-serif;
 min-height: 100vh;
 margin: 0;
 position: relative;
@@ -16,7 +15,7 @@ position: relative;
 
 /* De banner - het logo en de slider */
 #banner {
-height: 130px;
+height: 120px;
 width: 100%;
 background: darkgreen; /* Fallback color indien de achtergrondafbeelding niet geladen kan worden */
 padding: 20px;
@@ -25,14 +24,12 @@ background-image: url('images/banner_background.png')
 
 #lbk-logo {
 float: left;
-position: relative;
-top: 5px;
 }
 
 #sponsors {
 float: right;
 position: relative;
-top: -5px;
+top: -10px;
 }
 
 #sponsors img {
@@ -44,6 +41,11 @@ height: 100px;
 padding: 5px 5px;
 }
 
+.navbar-nav {
+width: 100%
+overflow: auto;
+}
+
 #navbar a {
 padding: 10px 25px;
 line-height: 16px;
@@ -52,17 +54,88 @@ line-height: 16px;
 color: lightgrey
 }
 
-#navbar a:hover, #navar a:active {
+#navbar a:hover, #navbar a:active {
 color: #99CB4A;
-/* background-color: #99CB4A; */
 }
 
 #navbar .dropdown .dropdown-item {
 color: rgb(64,64,64);
+height: 30px;
 }
 
 #navbar .dropdown .dropdown-item:hover {
 color: #99CB4A;
+}
+
+#navbar .dropdown .dropdown-item:active {
+color: #99CB4A;
+background-color: rgb(230,230,230);
+}
+
+#admin-link {
+float: right;
+}
+
+#admin-link a {
+color: #99CB4A;
+}
+
+#admin-link a:hover {
+color: lightgrey;
+}
+
+#nav-werkgroepen {
+float: left;
+min-width: 13.3%;
+margin-right: 5px;
+padding-top: 4px;
+background-color: rgb(100,100,100);
+opacity: 0.7;
+/* overflow: auto; */
+}
+
+#nav-wg-titel {
+color: #99CB4A;
+font-size: 13pt;
+font-style: italic;
+padding: 4px 10px;
+margin: 0;
+}
+
+#nav-wg-streep {
+margin: 4px 10px;
+border: 0.5px solid white;
+}
+
+.werkgroep {
+width: 95%;
+height: 2.2vw;
+}
+
+.werkgroep .icoon {
+width: 2.2vw;
+/* padding: 3px 5px 3px 4px; */
+padding: 3px 3px;
+padding-right: 5px;
+}
+
+.werkgroep img {
+height: 3.9vh;
+min-height: 25px;
+padding-left: 8px;
+}
+
+.werkgroep .link {
+padding: 3px 3px;
+}
+
+.werkgroep a {
+width: 100%;
+height: auto;
+float: left;
+font-size: 100%;
+color: #90D31D;
+padding-left: 8px;
 }
 
 /* Opmaak voor de footer --PAS #px AAN--  */
@@ -116,30 +189,41 @@ background-size: 350px;
 padding-bottom: 100px;
 }
 
-.green {
-background-color: rgb(147,193,104);
-overflow: auto;
-}
-
 /* De div met de 3 kaders links*/
-#evenementen {
-float: left;
-padding: 0px;
-width: 27%;
-}
 
-#hr-event {
-border: 1px solid black;
-margin: 8px 0px
-}
 
 .remove-margin {
 margin-bottom: 0px
 }
 
-#berichten {
+#prikbord {
+height: auto;
+padding: 15px 20px;
+margin: 20px 15px 15px 30px;
+background-color: #C4E293;
+border-radius: 10px;
+}
+
+h2 {
+text-align: center;
+}
+
+#evenementen {
 float: right;
-padding: 0px 10px;
+width: 30%;
+}
+
+#fucking-ruben {
+font-size: 8pt;
+}
+
+.thicc {
+border: 1px solid black;
+margin: 10px 0px 18px 0px
+}
+
+.thinn {
+border: 0.5px solid black;
 }
 
 /* De opmaak voor de 3 kaders (per kader) */
@@ -147,7 +231,8 @@ padding: 0px 10px;
 background-color: #99CB4A;
 overflow: auto;
 border-radius: 10px;
-padding: 20px;
+padding: 15px 20px;
+margin-top: 20px !important; /* Die important staat hier omdat Bootstrap dat om een of andere reden ook important heeft gemaakt dus nah dan doe ik dat lekker ook */
 min-height: 200px;
 }
 
@@ -192,15 +277,6 @@ height: 20px;
 margin-right: 5px;
 }
 
-/* Opmaak voor het kader met de posts */
-
-#post {
-background-color: rgb(200, 200, 200);
-border-radius: 10px;
-padding: 20px;
-min-height: 200px;
-}
-
 /* Opmaak van de register page
 #register-container {
 background-color: rgb(147,193,104);
@@ -215,12 +291,14 @@ padding: 10px 0;
 
 /* Opmaak voor standaard tekstpagina's */
 #pagetext {
+float: left;
 background-color: white;
 overflow: auto;
 border-radius: 10px;
-margin: 30px 5%;
+margin: 25px 2%;
 padding: 20px;
 min-height: 200px;
+width: 80%;
 }
 
 #pagetext a {
