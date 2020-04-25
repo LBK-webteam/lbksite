@@ -26,12 +26,14 @@
     var now = new Date();
     var deadline1 = new Date(2020, 3, 6, 0, 0);
     var deadline2 = new Date(2020, 3, 19, 23, 59);
+    var deadline3 = new Date(2020, 4, 3, 23, 59);
     if (now > deadline1) {
     $('#formulieren').show();
     if (now > deadline2) {
     $('#brieven').show();
+    if (now > deadline3) {
     $('#formulieren').hide();
-    }}
+    }}}
     });
     </script>
 
@@ -99,6 +101,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" id="formulieren" href="/opkomend/formulieren">Formulieren</a>
                     <a class="dropdown-item" id="brieven" href="/opkomend/brieven">Motivatiebrieven van kandidaten</a>
+                    <a class="dropdown-item" id="brieven" href="/opkomend/werkgroepen">Kandidatuur werkgroepen</a>
                 </div>
             </li>
             <li class="nav-item"><a class="nav-link" href="/db">Contact</a></li>

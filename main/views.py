@@ -110,25 +110,24 @@ def opkomend_werkgroepen(request):
     pages = Page.objects.order_by('page_index')
     runnings = Running.objects.filter(formtype='B')
     werkgroepen = ['Penning',
-                  'Communicatie',
-                  'Gnorgl',
-                  'Baarr',
-                  'Activiteiten',
-                  'Sport',
-                  'Cultuur',
-                  'Internationaal',
-                  'Bedrijvenrelaties',
-                  'Onderwijs',
-                  'Logistiek',
-                  'Cursusdienst',
-                  'ICT',
-                  'Onthaal',
-                  'Revue',
-                  'IFR',
-                  'Galabal',
-                  'IAAS',
-                  'Bloedserieus',
-                  ]
+                   'Communicatie',
+                   'Gnorgl',
+                   'Baarr',
+                   'Activiteiten',
+                   'Sport',
+                   'Cultuur',
+                   'Internationaal',
+                   'Bedrijvenrelaties',
+                   'Onderwijs',
+                   'Logistiek',
+                   'Cursusdienst',
+                   'ICT',
+                   'Onthaal',
+                   'Revue',
+                   'IFR',
+                   'Galabal',
+                   'IAAS',
+                   'Bloedserieus']
     context = {'pages': pages, 'runnings': runnings, 'werkgroepen': werkgroepen}
     return render(request, 'main/opkomend_werkgroepen.html', context)
 

@@ -7,30 +7,30 @@
 {% block content %}
 <!-- overview -->
     <div id="pagetext">
-        <h1>Motivatiebrieven van kandidaten</h1>
+        <h1>Kandidatuur werkgroepen</h1>
         <hr>
         {% for werkgroep in werkgroepen %}
         <h5>{{ werkgroep }}</h5>
         <hr>
-        {% for groep in runnings %}
-        {% if groep.workgroup == werkgroep %}
-        <p>{{ candidate.first_name }} {{ candidate.last_name }}</p>
+        {% for group in runnings %}
+        {% if group.workgroup == werkgroep %}
+        <p>{{ group.first_name }} {{ group.last_name }}</p>
         <p>
-            <button class="btn1" type="button" data-toggle="collapse" data-target="#candidate{{ candidate.id }}"
+            <button class="btn1" type="button" data-toggle="collapse" data-target="#candidate{{ group.id }}"
                     aria-expanded="false" aria-controls="cand_letter">
                 Brief weergeven
             </button>
         </p>
-        <div class="collapse" id="candidate{{ candidate.id }}">
+        <div class="collapse" id="candidate{{ group.id }}">
             <div class="card card-body">
                 <p><strong>Leden van de werkgroep</strong></p>
-                <p>{{ candidate.members }}</p>
+                <p style="white-space: pre-wrap;">{{ group.members }}</p>
                 <p><strong>Motivatie</strong></p>
-                <p>{{ candidate.motivation_b }}</p>
+                <p>{{ group.motivation_b }}</p>
                 <p><strong>Hoe kan jij ervoor zorgen dat LBK in de toekomst zal verbeteren?</strong></p>
-                <p>{{ candidate.q1b }}</p>
+                <p>{{ group.q1b }}</p>
                 <p><strong>Hoe zie je de samenwerking met je team?</strong></p>
-                <p>{{ candidate.q2b }}</p>
+                <p>{{ group.q2b }}</p>
             </div>
         </div>
         {% endif %}
