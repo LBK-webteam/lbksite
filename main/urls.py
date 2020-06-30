@@ -20,4 +20,5 @@ urlpatterns = [
     path('opkomend/werkgroepen', views.opkomend_werkgroepen, name='opkomend_werkgroepen'),
     path('neucom', views.neucom, name='neucom'),
     path('officiele_documenten', views.officiele_documenten, name='officiele_documenten'),
+    path('links', views.links, name='links'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

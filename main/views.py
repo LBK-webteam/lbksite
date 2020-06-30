@@ -143,6 +143,11 @@ def officiele_documenten(request):
     context = {'pages': pages}
     return render(request, 'main/officiele_documenten.html', context)
 
+def links(request):
+    pages = Page.objects.order_by('page_index')
+    context = {'pages': pages}
+    return render(request, 'main/links.html', context)
+
 """
 def register(request):
     if request.method == 'POST':
