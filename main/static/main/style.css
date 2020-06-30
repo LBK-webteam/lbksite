@@ -204,10 +204,6 @@ background-color: #C4E293;
 border-radius: 10px;
 }
 
-h2 {
-text-align: center;
-}
-
 #evenementen {
 float: right;
 width: 30%;
@@ -268,6 +264,41 @@ transition: background-color 0.5s;
 
 #overview button:hover {
 background-color: darkgreen;
+}
+
+.vacature-img {
+width: 20%;
+height: inherit;
+}
+
+.vacature-img img {
+float: right;
+height: inherit;
+width: 100%;
+}
+
+.vacature-overzicht {
+width: 80%;
+}
+
+#overview button {
+padding: 8px 20px;
+}
+
+.vacature-link {
+margin-bottom: 0;
+}
+
+.vacature-beschrijving {
+width: 125%;
+}
+
+.vacature-collapse {
+transition: height 0s;
+}
+
+.vacature-hr {
+margin-top: 0;
 }
 
 .remember input
