@@ -37,6 +37,14 @@ margin: 0px 20px;
 height: 100px;
 }
 
+.p-nomargin {
+margin: 0;
+}
+
+.hr-notopmargin {
+margin-top: 0
+}
+
 #navbar-geheel {
 padding: 5px 5px;
 }
@@ -300,8 +308,16 @@ transition: height 0s;
 margin-top: 0;
 }
 
-.remember input
-{
+.db-img {
+width: 15%;
+height: 100%
+}
+
+.db-img img {
+height: 100%;
+}
+
+.remember input {
 width: 20px;
 height: 20px;
 margin-right: 5px;

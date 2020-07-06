@@ -7,18 +7,20 @@
 {% block content %}
     <div id="pagetext">
         <h1 class="p-2">Dagelijks bestuur</h1>
+        <hr class="hr-notopmargin">
         <div class="container">
             {% for db_member in db_members %}
             <div class="row">
-                <div class="col-sm">
-                    <div class="float-left p-2">
-                        <img src="{{ db_member.profile_picture.url }}" alt="{{ db_member.function }}" style="width: 160px; height: 200px;">
+                <div class="col-sm" style="height:180px">
+                    <div class="float-left p-2 db-img">
+                        <img src="{{ db_member.profile_picture.url }}" alt="{{ db_member.function }}" class="float-right">
+                        <!-- style="width: 160px; height: 200px; -->
                     </div>
                     <div class="d-block float-left p-2">
-                        <h2>{{ db_member.function }}</h2>
-                        <hr>
-                        <p>{{ db_member.first_name }} {{ db_member.last_name }}</p>
-                        <p>{{ db_member.email }}</p>
+                        <h3>{{ db_member.function }}</h3>
+                        <hr class="hr-notopmargin">
+                        <p class="p-nomargin" style="font-weight:bold">{{ db_member.first_name }} {{ db_member.last_name }}</p>
+                        <p class="p-nomargin">{{ db_member.email }}</p>
                         <p>{{ db_member.phone_number }}</p>
                     </div>
                 </div>
